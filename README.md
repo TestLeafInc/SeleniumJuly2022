@@ -27,7 +27,7 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Webdriver Snapshot methods for visible area and webelement - Base64 and File
 * Assignments Review
 
-# Week 3 - Java OOPS, Collection and WebDriverWait
+# Week 3 - Java OOPs, Collection
 * Java OOPS pillars 
 * Abstraction - Java Concept, Real time example and Selenium Implementation
 * Inheritance, Polymorphism, Encapsulation 
