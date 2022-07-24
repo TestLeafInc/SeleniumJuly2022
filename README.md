@@ -26,3 +26,11 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Implicit and Thread.sleep
 * Webdriver Snapshot methods for visible area and webelement - Base64 and File
 * Assignments Review
+
+# Week 3 - Java OOPS, Collection and WebDriverWait
+* Java OOPS pillars 
+* Abstraction - Java Concept, Real time example and Selenium Implementation
+* Inheritance, Polymorphism, Encapsulation 
+* Java Collection - List, Set, Map
+* Problem Solving - Duplicate values in array, Unique characters in String, Count of characters and Two Sum
+* Assignment Review
