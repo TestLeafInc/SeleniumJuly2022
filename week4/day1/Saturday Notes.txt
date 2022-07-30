@@ -1,0 +1,114 @@
+
+Saturday Agenda
+
+2.15 - 2.30     :   Recap
+2.30 - 3.00     :   Alert - Concept and Practice
+3.00 - 3.20     :   Break out (Alert)
+3.20 - 4.10     :   Frame - Concept and Practice
+4.10 - 4.30     :   Break out (Frame)
+4.30 - 4.50     :   Tea Break
+4.50 - 5.20     :   Window - Concept and Practice
+5.20 - 6.00     :   Break out (Window)
+6.00 - 6.20     :   Mouse Actions
+6.20 - 6.40     :   Break out (Actions)
+6.40 - 6.45     :   Recap and Assignments
+
+
+Alert (Selenium WebDriver)
+
+- Modal Dialog
+- Not inspectable (it is javascript not a html code)
+
+
+Types
+
+- Simple Dialog (Only one option)   - Information !
+- Confirm Dialog (2 options)    - Confirmation !
+- Prompt Dialog (Text Box + 2 Boolean) - Data Collection + Confirmation !
+
+
+Methods
+
+- accept    (Positive Action)
+- dismiss   (Negative Action)
+- sendKeys  (Type value on the prompt text) -- always clear before type
+- getText   (Read the title and not the domain)
+
+Limitation
+
+- You cannot take snapshot of the alert 
+
+Exception
+- If you try interacting with DOM element without closing alert: UnhandledAlertException
+- If you are interacting with an alert through code but alert did not appear: NoAlertPresentException
+
+Sweet Alert - inspectable, Inspect -> findElement -> Click ! Can take snap !
+
+
+
+Frame
+
+- HTML element that helps developers to organize the set of elements
+- iframe (tag) that means it is in-line frame (frame / frameset)
+
+
+NoSuchElement
+
+- Either your locator is wrong 
+- Or the element may be living inside the frame
+
+Exception
+
+- NoSuchFrameException
+
+Overloading
+
+- frame(int index) // this is more than enough !
+- frame(String nameOrId)
+- frame(WebElement ele)
+
+Come out of the frame
+
+- switch to defaultContent
+
+Assignment
+
+1_ Open Chrome
+2_ Load https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm
+3_ Click TryIt (not: this is inside frame)
+4_ Click Cancel on the alert
+5_ Print the resulting text
+
+
+Window / Tab
+
+- Window or Tab is technically same
+- Window / Tab -> URL / browser controls.
+
+Challenges
+
+- Window URL / Title / Sequence Number can change
+- So, how to find the window uniquely?
+
+Selenium Way
+
+- Every new window -> tag it -> new WindowHandle -> String (unique)
+
+CDwindow-A1E35FDEE44C0FB5C3CEF9364377BF31
+CDwindow-ECC6F79AD2F5DA660A14663CF8C3FBDA
+
+Exception
+
+NoSuchWindowException
+
+Close and Quit
+
+How to swtitch to a new window ?
+
+- getWindowHandles()
+- Convert Set to List
+- Pick the particular window using get(index)
+- Switch to the window using the handle
+- Close or Quit
+
+
