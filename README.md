@@ -34,3 +34,17 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Java Collection - List, Set, Map
 * Problem Solving - Duplicate values in array, Unique characters in String, Count of characters and Two Sum
 * Assignment Review
+
+# Week 4 - Target Locators and Actions
+* SwitchTo - TargetLocator
+* Alert - accept, dismiss, getText, sendKeys, Exceptions
+* Frame - method overloading (int,String, WebElement), Exception
+* DefaultContent - Switch back from frame
+* Window - getWindowHandles, getWindowHandle, Exception
+* Switch to Window Options - Set to List
+* close vs quit
+* Actions class methods - dragAndDrop, dragAndDropBy, moveToElement, perform
+* WebDriverWait, Expectedconditions, TimeOutExceptions
+* Other Actions class - clickAndHold, keyDown, release
+* Exception Handling - try/catch, throw, throws, finally
+* Keywords - static, this, super
