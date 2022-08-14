@@ -1,0 +1,213 @@
+
+Saturday Agenda
+
+2.15 to 2.30 PM     :   Interview Q & A
+2.30 to 3.15 PM     :   TestNG Introduction, XML Design
+3.15 to 3.45 PM     :   (Break Out) Sequential, Parallel
+3.45 to 4.30 PM     :   Annotations
+4.25 to 4.40 PM     :   Tea Break
+4.40 to 5.10 PM     :   (Break Out) Annotations
+5.10 to 6.05 PM     :   Attributes
+6.05 to 6.30 PM     :   (Break Out) Attributes
+6.30 to 6.45 PM     :   Additional Attributes
+
+Major take aways: Interview questions related to TestNG
+
+Frameworks that we need to know
+
+Limitations:
+
+1) One by One (1200+ UI automated testcases !)
+    - Time consuming effort !
+    - Same Data
+    - Manually someone have to present
+    - Desire: Run automatedly - Parallel 
+2) Run for hard coded data
+    - Desire: Run for different data
+3) There is no reporting
+    - Desire: At least basic reporting (how many passed, how many failed, how many skipped)
+4) There is no way to filter the tests to run
+    - Desire: Automated grouping would be nice to have
+5) There is no way to re-run the test on failure
+    - Desite: automated re-try !
+
+
+TestNG
+
+- (Java) OpenSource Test execution framework
+- No, it can run for any java based tests !
+- Selenium, Playwright, Rest Assured
+- Write minimal code + Full of Configuration !
+
+TestNG (7.x) vs JUnit (5.x)
+
+- Cedric, Krishnan Mahadevan !
+
+2 Step Process
+
+- TestNG as Plugin (To run as testng xml file)
+- TestNG as Jar (To understand the TestNg Software)
+
+
+Process to convert normal Java code to TestNG code
+
+1) Change the main method to normal method 
+    - remove static
+    - change main to meaningful test name
+    - remove the arguments 
+
+2) Add the Annotations (@Test) on top of the method
+3) Now, run the test !
+
+How to run multiple testcases through TestNG?
+1) Select the testcases that you to like to run together.
+2) Convert them as TestNG -> Convert TestNG
+3) This will generate the testng xml file 
+4) Click the XML file and Open the Source tab
+
+
+XML Structure:
+Suite   : All testcases together in a xml
+Test    : Map it with a module of your app !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classroom Assignment 1 : Sequential / Parallel
+
+1) Create a new package (week6.day1)
+2) Copy any 2 working testcases (Leaftaps) to new package
+3) Convert them as TestNG testcases
+4) Create a XML that can run sequentially
+5) Change 2nd testcase browser as firefox / edge
+6) Create a new XML to run in parallel
+
+
+
+
+
+
+
+Annotations Hierarchy :
+
+@BeforeSuite
+
+            @BeforeTest
+
+                        @BeforeClass
+
+                                    @BeforeMethod
+
+                                                @Test (Mandatory)
+
+                                    @AfterMethod
+
+                        @AfterClass
+
+            @AfterTest
+
+@AfterSuite            
+
+
+Classroom Assignment 2: 
+
+1) Understand the common test steps that are repeating
+2) Push those lines of code to @BeforeMethod and to @AfterMethod
+3) Place them inside the common class 'ProjectSpecificMethods'
+4) Extend the above class from the testcases (and remove the duplicated code)
+5) Run and Confirm - all works fine !
+
+Keep in mind
+
+1) Common class level variable declaration !
+2) No duplicate declarations !
+
+
+Attributes @Test
+
+alwaysRun	
+If set to true, this test method will always be run even if it 
+depends on a method that failed.
+
+dependsOnMethods	
+The list of methods this method depends on.
+
+Delete Lead depends on Create Lead
+
+priority vs dependsonmethods
+
+- priority will work within the class whereas dom -> across classes 
+- priority will run even when previous priority fails but dom does not !
+
+invocationCount	
+ - The number of times this method should be invoked.
+ - Use it when: you like to create data for same information
+
+ timeOut	
+ - The maximum number of milliseconds this test should take. Otherwise mark test as failed
+ - Use it when: you like to benchmark the performance of the test steps
+
+
+invocationTimeOut	
+
+-  The maximum number of milliseconds this test should take for the cumulated time of all the invocationcounts. This attribute will be ignored if invocationCount is not specified.
+- Do not use it !
+
+priority	
+
+- The priority for this test method. Lower priorities will be scheduled first.
+- Useful for a developer
+
+enabled	 / @ignore
+Whether methods on this class/method are enabled.
+- enabled is at method level
+- ignore can be used at the class level too
+
+groups	
+- The list of groups this class/method belongs to.
+
+
+Classroom Assignment : 3
+
+1) Run one of the test (CreateLead) 2 times
+2) Make another test (EditLead) depends on the other test (CreateLead)
+    - Confirm the CreateLead (first/dependency test) runs first
+    - Confirm the dependent test runs second
+    - Then make the dependency / first / createlead to fail using timeout (like 1s)
+    - Confirm the dependency gets skipped (7.6.1 --> please change to 7.4.0)
+
+
+
+Babu - 300
+Vidya   - 400
+Ram - 200
+Aravind - 200
+Subraja - 200
+
+
+
+
+
+pass
+fail
+skip
+ignore
