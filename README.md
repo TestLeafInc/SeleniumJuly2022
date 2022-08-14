@@ -47,4 +47,21 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * WebDriverWait, Expectedconditions, TimeOutExceptions
 * Other Actions class - clickAndHold, keyDown, release
 * Exception Handling - try/catch, throw, throws, finally
-* Keywords - static, this, super
+
+# Week 5 - Interview Prep Activities
+
+
+# Week 6 - TestNG (Test Runner Framework)
+* TestNG Basics
+* Annotations and its hierarchy
+* TestNg XML design
+* Convert existing plain testcases to TestNg implementation
+* @Test Annotation and its attributes
+* Dependency Injection
+* Test Report using TestNg
+* Parameterization - @Parameter and @DataProvider
+* Read Excel using Apache POI Java API
+* Integrate excel data automation with TestNg (Apache POI + Data Provider)
+* Build OOPS concepts into TestNg implementation 
+* Run sequential, parallel - with logs and reports
+* Listeners - ISuite, ITest and Retry Implementations
