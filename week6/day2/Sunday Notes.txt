@@ -1,0 +1,114 @@
+
+Sunday Agenda
+
+2.15 to 2.30 PM     :   Recap - TestNG 
+2.30 to 3.05 PM     :   Parameterization - Parameter
+3.05 to 3.25 PM     :   (Break Out) Parameter
+3.25 to 3.45 PM     :   DataProvider
+3.45 to 4.15 PM     :   (Break Out) Parameterization
+4.15 to 4.45 PM     :   Apache POI - Read Excel
+4.45 to 5.00 PM     :   Tea Break
+5.00 to 5.30 PM     :   (Break Out) Read Excel
+5.30 to 5.45 PM     :   TestNG + Apache POI Integration
+5.45 to 6.00 PM     :   (Break Out) Attributes
+6.00 to 6.30 PM     :   TestNG Listeners
+
+Parameterization
+
+- No hard coding of data inside the java class
+- Preferred to automate them by passing from external source (excel, xml, json, db)
+
+2 Types
+
+- Static    (Parameter)  : 
+            If it is common across multiple testcases, then you label -> xml (testng)
+
+            Examples: url, username, password
+
+- Dynamic   (DataProvider)  :
+            It is specific to the test case. Cannot reuse most of them -> java (excel)
+
+            Examples: company name, first name ...
+
+
+Steps to implement Parameter
+
+1) Identify the data that are need to be static in the xml (url, username, password)
+2) Add parameter tag for each one of these data in the XML file
+3) Map the parameters in the java class using @Parameters
+    - Note: The name should exactly match the names in the xml 
+4) Use that parameters inside the method using arguments 
+    - Note: Sequence matters but the name of the argument does not matter
+5) Now, replace the arguments with hardcoded value
+
+Note: You should always run from the xml file when you use parameters 
+
+
+
+Steps to implement DataProvider
+
+1) Identify the data that are need to be dynamic for the particular testcase
+    - Create Lead : companyName, firstName, lastName
+    - Edit Lead: phoneNumber, companyName
+2) Create a method to pass data with @DataProvider annotation
+3) Create Input array with number of columns (number of data / fields) and number of rows
+    - Make sure the index starts at 0
+4) Return data back to the calling class (return)
+5) Receive this data in the testcase
+    - use dataprovider attribute
+    - Use that arguments inside the method
+6) Finally, replace the hard coded value.
+
+
+How to read data from excel?
+
+- Microsoft Excel (Microsoft)
+- Not a direct Java library !
+- Apache POI (accessing MS Office software) using Java
+- Focus: Data from excel !
+- Excel extensions: .xls, .xlsx, .xlsm
+
+Should I excel installed in my machine? Not needed !
+- Read data (you should have the file with extension .xlsx)
+
+WorkBook (File Name with ext .xlsx)
+    - WorkSheet (Sheet1, Sheet2)
+        - Rows
+            - Column (Cell)
+
+XSSFWorkBook (Only for .xlsx)
+    XSSFWorkSheet
+        XSSRRow
+            XSSFC
+
+Steps to read from excel
+
+1) Open the workbook using file name and path
+2) Go to the specific sheet (by sheet name or index)
+3) Go to the specific row (by index)
+4) Go to the specific column (by index) -- cell
+5) Read the content
+
+
+Integrating Apache POI with TestNG
+
+1) Convert the method with return type as String[][]
+2) Make sure to push all the excel data to the array
+3) Comment or delete hard coded data of data provider and replace with excel read
+4) Run create lead and confirm it works fine !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
