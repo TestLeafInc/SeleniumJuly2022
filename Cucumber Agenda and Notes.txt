@@ -1,0 +1,120 @@
+
+Agenda
+
+2.15 PM - 2.30 PM : Interview Questions
+2.30 PM - 3.25 PM : Cucumber Intro & Feature File
+3.25 PM - 3.45 PM : (Break Out) Create Feature File
+3.45 PM - 4.30 PM : Step Definitions and Runner
+4.30 PM - 4.50 PM : Tea/Coffee Break
+4.50 PM - 5.30 PM : (Break Out) Step Def, Runner
+5.30 PM - 6.00 PM : Parameterization, Hooks
+6.00 PM - 6.30 PM : (Break Out) Param, Hooks
+6.30 PM - 6.45 PM : Recap & Interview Questions
+
+
+io.cucumber.java.InvalidMethodException: You're not allowed to extend classes that define Step Definitions or hooks. class stepDefs.LoginPage extends class stepDefs.ProjectSpecificMethods
+
+
+
+
+
+Cucumber - BDD automation tool
+
+TDD - Test Driven Development
+------------------------------
+- Write the testcases first
+- Get the approval for the testcases
+- Development should be based on the testcases
+
+Cons:
+- Lot of negative testcases covered rather than positive testcases
+
+ATTD - Acceptance Test Driven Development:
+------------------------------------------
+- Write the acceptance testcases first
+- Develop the software based on the acceptance testcases
+
+Cons:
+ - Communication gap between the Technical and non technical team
+ 
+ 
+BDD - Behaviour Driven Development:
+-----------------------------------
+- To address the communication gap between tech and non tech team
+
+- Write acceptance testcases first using common language
+	- common language: understandable by both and tech and non tech team
+
+Cucumber - Ruby
+Cucumber - Java (Gherkins)
+SpecFlow - C#   (Gherkins)
+
+
+Gherkin Keywords:	
+------------------
+Feature     	Describes the functionality of an application (only once in the feature file)
+Scenario        Describe a behaviour / testcase (it can be multiple for a feature file)
+Given           Represent a pre condition
+When            Represent Test Condition / Step
+Then            Represent expected result (for positive scenario)
+But             Represent expected result (for negative scenario)
+Background      Describe a pre-condition for multiple scenarios (only once in the feature file)
+And             Represent to combine the above keyword based step
+
+
+
+
+
+
+
+
+
+3 Layers:
+----------
+Features            File to write the BDD Testcases (flat file)
+Step Definition     Implement the test step using Java/Selenium
+Runner              TestNG for execution
+
+
+2 
+1) Natural Plugin   
+
+
+
+How to pass data from steps / parameterization:
+-----------------------------------------------
+- enclose the data within '' in the steps
+- replace the data with {string} in the StepDefinition
+- Create arguments in the method to get the input
+- Replace the hard coded data with variable
+
+How to pass multiple data set to a Scenario:
+---------------------------------------------
+- Use Gherkin keyword "Scenario Outline"
+- Examples should follow Scenario Outline
+- First row after Examples is the column hearder
+- All the informations should be enclosed within ||
+- Second row onwards mention data within ||
+- Replace the data with <column name> in the steps				  
+
+
+Things to do !
+
+1) Move the common launch and close code to ProjectSpecificMethods
+2) Annotate them with @BeforeMethod and @AfterMethod (TestNG)
+3) Change your Runner class to extends ProjectSpecifcMethods
+4) Let ProjectSpecificMethods extends AbstractTestNGCucumberTests
+5) Let LoginPage extends ProjectSpecifcMethods
+6) Create a new Feature by name 'CreateLeads.feature'
+7) Add all the steps in the Scenario Outline
+8) Add examples with at least 2 data
+9) Implement the Step Definitions in CreateLeadPage (extends ProjectSpecifcMethods)
+10) Change the runner class to run the CreatLead feature file
+
+Note:
+
+1) Make sure not to use special character in the feature file
+2) Make sure all steps are implemented with no spell or case issues
+3) Make sure there are no duplicate steps definitions
+
+Create Lead & Edit Lead 
