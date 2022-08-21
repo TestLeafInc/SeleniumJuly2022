@@ -64,4 +64,16 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Integrate excel data automation with TestNg (Apache POI + Data Provider)
 * Build OOPS concepts into TestNg implementation 
 * Run sequential, parallel - with logs and reports
-* Listeners - ISuite, ITest and Retry Implementations
+* Listeners - ITest and Retry Implementations
+
+# Week 6 - Cucumber Basics to Advanced (BDD Framework)
+* Cucumber and BDD, TDD Basics
+* Create Feature File with simple scenario
+* Cucumber - Gherkin Keywords
+* Integration with Step Definitions
+* Scenario Outline with Examples and with Background
+* CucumberOptions - Glue, Features, Publish, Hooks
+* Create Runner File with TestNG
+* Cucumber Hooks and Java OOPS integration
+* Convert existing TestNg testcases to BDD implemntation
+* Run Feature files from TestNg XML
