@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -20,14 +21,20 @@ public class ProjectSpecificMethods {
 	
 	RemoteWebDriver driver;
 	String excelFileName = "";
+	String browserName = "chrome";
 	static WebDriverWait wait;	
 	
 	@Parameters({"url","username","password"})
 	@BeforeMethod
 	public void setup(String url, String username, String password) {
 		
-		WebDriverManager.chromedriver().setup(); // verify the version, download, set up !
-		driver = new ChromeDriver();
+		if(browserName.equals("chrome")) {
+			WebDriverManager.chromedriver().setup(); // verify the version, download, set up !
+			driver = new ChromeDriver();
+		}else if(browserName.equals("edge")) {
+			WebDriverManager.edgedriver().setup(); // verify the version, download, set up !
+			driver = new EdgeDriver();
+		}
 		driver.get(url);
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -46,7 +53,7 @@ public class ProjectSpecificMethods {
 
 	}
 
-	@DataProvider(name="fetch")
+	@DataProvider(name="fetch", indices = {0})
 	public String[][] fetchData() throws IOException {
 		
 		String[][] data = ReadData.readData(excelFileName);

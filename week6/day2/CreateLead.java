@@ -16,7 +16,7 @@ public class CreateLead extends ProjectSpecificMethods{
 
 	@Test(dataProvider = "fetch")
 	public void createLead(String company, String first, String last) {
-		driver.findElement(By.linkText("Create Lead")).click();
+		driver.findElement(By.linkText("Create Lead1")).click();
 		driver.findElement(By.id("createLeadForm_companyName")).sendKeys(company);
 		driver.findElement(By.id("createLeadForm_firstName")).sendKeys(first);
 		driver.findElement(By.id("createLeadForm_lastName")).sendKeys(last);
