@@ -77,3 +77,4 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Cucumber Hooks and Java OOPS integration
 * Convert existing TestNg testcases to BDD implemntation
 * Run Feature files from TestNg XML
+* Organized the code base as pages
