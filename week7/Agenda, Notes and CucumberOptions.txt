@@ -1,0 +1,99 @@
+
+Agenda
+
+2.15 PM - 2.30 PM : Edit Lead Automation (Feature File - Step Definition)
+2.30 PM - 3.25 PM : CucumberOptions, Data Table, Hooks and Tags
+3.25 PM - 4.15 PM : (Break-out) Hooks, tags
+4.15 PM - 4.45 PM : TestNg Listeners // and Assertions
+4.50 PM - 5.10 PM : Tea/Coffee Break
+5.10 PM - 5.40 PM : (Break-out) Listeners //, Assertions
+6.00 PM - 6.15 PM : Introduction to Page Object Model
+6.15 PM - 6.30 PM : (Break-out) Design Pages
+6.30 PM - 6.45 PM : Recap 
+
+
+Classroom Assignment
+
+1) Create a hook implementation class and add only @BeforeStep and @AfterStep
+    - Implement taking snap inside the @AfterStep (increment the snap number)
+    - Just print a statement inside @BeforeStep
+    - Make sure the hook impl class is extending ProjectSpecificMethods
+
+2) Make your one of the scenario (login/create lead) as @Smoke and others @Sanity
+
+3) Go to your runner class, add the glue for the hooks and add the tags !!
+
+
+
+
+
+
+
+
+CucumberOptions
+
+features    Path to a directory of feature(s)
+dryRun      To Skip Glue code execution
+glue        Package to load glue code (step definitions, hooks and plugins)
+tags        Only run scenarios tagged with tags matching
+plugin      Register in-built or 3rd party plugins
+publish     cloud reporting
+monochrome  terminal output without colours
+name        Only run scenarios whose names match one of the regex
+
+format, strict - removed in recent versions
+
+3 Exceptions
+PendingException
+UndefinedStep
+DuplicateStep
+
+
+
+
+
+Listener -> Observer design !!
+
+
+
+
+Retry Failed Tests
+
+3 Different Approach in TestNG !!
+
+1) All tests get executed -> At the end of the execution -> testng-failed.xml
+    Cons -> This will not re-run automatically, you need to run it by yourself !
+         -> It will not run immediately !!
+
+2) Setup the re-run at each testcase level
+    Pro -> It automatically runs everytime when test fails !
+    Cons -> I need add / remove this attribute in every @Test 
+
+3) Setup the re-run at the xml level using listener
+    Pro -> It will run automatically using listeners, you can decide to add/remove when you wanted
+
+
+
+
+Approach 2: 2 Step Process to Implement Retry Logic
+
+
+1) Java code to implement IRetryListener !
+2) Add that class as an attribute to @Test 
+
+
+
+
+Approach 3: 3 Step Process to Implement Retry Logic
+
+1) A Java class to implements IRetryAnalyzer (Completed)
+2) A Java class to implements IAnnotationTransformer (Completed)
+3) Listener Tag in the XML 
+
+
+Assertions
+
+1) So far --> getText() -> String -> equals or contains -> syso !
+
+Hard Assertions -> when it fails, stop the test ! (Default)
+Soft Assertions -> when it fails, it will continue but it will record the failure !
