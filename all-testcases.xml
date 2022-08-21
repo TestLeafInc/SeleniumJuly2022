@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+			
+	<listeners>
+		<listener class-name="week6.day2.RetryListener"></listener>
+	</listeners>
+	<parameter name="url" value="http://leaftaps.com/opentaps"></parameter>
+	<parameter name="username" value="demosalesmanager"></parameter>
+	<parameter name="password" value="crmsfa"></parameter>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="week6.day2.DeleteLead" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
