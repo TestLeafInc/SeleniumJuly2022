@@ -66,7 +66,7 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Run sequential, parallel - with logs and reports
 * Listeners - ITest and Retry Implementations
 
-# Week 6 - Cucumber Basics to Advanced (BDD Framework)
+# Week 7 - Cucumber Basics to Advanced (BDD Framework)
 * Cucumber and BDD, TDD Basics
 * Create Feature File with simple scenario
 * Cucumber - Gherkin Keywords
@@ -78,3 +78,13 @@ This is public repository for Selenium July 2022 Learners at TestLeaf.
 * Convert existing TestNg testcases to BDD implemntation
 * Run Feature files from TestNg XML
 * Organized the code base as pages
+
+# Week 8 - Pattern Object Model Design Pattern and Framework
+* Page Object Model design rules
+* Pattern Object model - Page Inheritance
+* Build Page Classes (without Page Factory)
+* Build DataProvider utility classes
+* Build the testcases as runner classes
+* Design the TestNg XML with verbose
+* Debug and execute the testcases for different data 
+* ThreadLocal Implementation for Driver, Reports
